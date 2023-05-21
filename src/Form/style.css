@@ -20,7 +20,6 @@
     color: white;
 }
 .form__labelText {
-    display: inline-block;
     min-width: 120px;
     max-width: 150px;
     margin-right: 5px;
@@ -28,15 +27,12 @@
 }
 
 .form__field {
+    display:grid;
     border-radius: 10px;
     padding: 5px;
     border: 3px solid black;
     max-width: 200px;
     width: 100%;
-}
-
-.form__field:invalid {
-    background-color: rgb(255, 205, 68);
 }
 
 .form__button {
