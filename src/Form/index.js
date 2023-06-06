@@ -31,7 +31,7 @@ export const Form = ({ calculateResult, result }) => {
                                 name="kwota"
                                 type="number"
                                 placeholder="Podaj kwotę w PLN"
-                                autofocus
+                                autoFocus
                                 step="0.01"
                                 min="0.01"
                                 required
@@ -51,9 +51,9 @@ export const Form = ({ calculateResult, result }) => {
                                     <option
                                         key={currency.short}
                                         value={currency.short}
-                                        >
-                                            {currency.name}
-                                        </option>
+                                    >
+                                        {currency.name}
+                                    </option>
                                 )))}
                             </select>
                         </label>

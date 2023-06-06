@@ -9,8 +9,8 @@ function App() {
 
   const calculateResult = (currency, amount) => {
     const rate = currencies
-    .find (({ short }) => short === currency)
-    .rate;
+      .find(({ short }) => short === currency)
+      .rate;
 
     setResult({
       sourceAmount: +amount,
@@ -18,12 +18,12 @@ function App() {
       currency,
     });
   }
-  
+
   return (
     <body className="body">
-      <Form 
-      result={result}
-      calculateResult={calculateResult}
+      <Form
+        result={result}
+        calculateResult={calculateResult}
       />
     </body>
   );
