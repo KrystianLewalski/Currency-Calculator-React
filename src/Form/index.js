@@ -19,7 +19,7 @@ export const Form = ({ calculateResult, result }) => {
                     <legend className="form__legend">
                         Kalkulator Walut
                     </legend>
-                    <p>
+                    <p className="form__container">
                         <label>
                             <span className="form__labelText">
                                 Kwota*:
@@ -38,7 +38,7 @@ export const Form = ({ calculateResult, result }) => {
                             />
                         </label>
                     </p>
-                    <p>
+                    <p className="form__container">
                         <label>
                             <span className="form__labelText">
                                 Wybierz walutę**:
@@ -58,9 +58,9 @@ export const Form = ({ calculateResult, result }) => {
                             </select>
                         </label>
                     </p>
-                    <p>Pola wymagane oznaczone *</p>
-                    <p>Kurs na dzień 21.05.2023**</p>
-                    <p>
+                    <p className="form__container">Pola wymagane oznaczone *</p>
+                    <p className="form__container">Kurs na dzień 21.05.2023**</p>
+                    <p className="form__container">
                         <button className="form__button">Oblicz</button>
                     </p>
                     <Result result={result} />
