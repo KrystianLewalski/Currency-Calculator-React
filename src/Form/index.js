@@ -2,6 +2,7 @@ import { Result } from "./Result";
 import { useState } from "react";
 import { currencies } from "../currencies"
 import "./style.css";
+import { DateField } from "./Date";
 
 export const Form = ({ calculateResult, result }) => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -16,6 +17,7 @@ export const Form = ({ calculateResult, result }) => {
         <div className="container">
             <form className="form" onSubmit={onSubmit}>
                 <fieldset className="form__fieldset">
+                    <DateField />
                     <legend className="form__legend">
                         Kalkulator Walut
                     </legend>
