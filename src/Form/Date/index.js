@@ -4,15 +4,15 @@ import "./style.css"
 export const DateField = () => {
     const [date, setDate] = useState(new Date());
 
-    const day = date.toLocaleDateString(
-        undefined, {
-        month: "long",
-        weekday: "long",
-        day: "numeric",
-        year: "numeric"
-    },);
+    const day = date.toLocaleDateString(undefined,
+        {
+            month: "long",
+            weekday: "long",
+            day: "numeric",
+            year: "numeric"
+        });
 
-    const time = date.toLocaleDateString(undefined);
+    const time = date.toLocaleTimeString(undefined);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -25,9 +25,8 @@ export const DateField = () => {
     }, []);
 
     return (
-    <p className="date">
-        Data i godzina: {day}, {time}
-    </p>
+        <p className="date">
+            Data i godzina: {day}, {time};
+        </p>
     );
 };
-
