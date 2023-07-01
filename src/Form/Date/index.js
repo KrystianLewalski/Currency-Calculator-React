@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./style.css"
+import { DateContainer } from "./styled"
 
 export const DateField = () => {
     const [date, setDate] = useState(new Date());
@@ -25,8 +25,8 @@ export const DateField = () => {
     }, []);
 
     return (
-        <p className="date">
+        <DateContainer>
             Data i godzina: {day}, {time};
-        </p>
+        </DateContainer>
     );
 };
