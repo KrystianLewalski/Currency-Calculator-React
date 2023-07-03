@@ -16,4 +16,5 @@ export const Body = styled.body`
   display: flex;
   justify-content: center;
   font-family: "Lato", sans-serif;
+  min-height: 100vh;
 `;
