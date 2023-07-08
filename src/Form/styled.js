@@ -7,20 +7,20 @@ export const CalculatorForm = styled.form`
 `;
 
 export const FieldSet = styled.fieldset`
-    border: 3px solid black;
+    border: 3px solid ${({ theme }) => theme.colors.black};
     border-radius: 10px;
     padding: 10px;
     margin-top: 150px;
-    background-color: aliceblue;
+    background-color: ${({ theme }) => theme.colors.aliceBlue};
     min-width: 500px;
 `;
 
 export const Legend = styled.legend`
-    border: 5px solid teal;
+    border: 5px solid ${({theme}) => theme.colors.teal};
     border-radius: 20px;
     padding: 5px;
-    background-color: teal;
-    color: white;
+    background-color: ${({theme}) => theme.colors.teal};
+    color: ${({ theme }) => theme.colors.white};
 `;
 
 export const FormContainer = styled.p`
@@ -39,7 +39,7 @@ export const FormField = styled.input`
     display: grid;
     border-radius: 10px;
     padding: 5px;
-    border: 3px solid black;
+    border: 3px solid ${({ theme }) => theme.colors.black};
     max-width: 200px;
     width: 100%;
 `;
@@ -48,7 +48,7 @@ export const SelectField = styled.select`
     display: grid;
     border-radius: 10px;
     padding: 5px;
-    border: 3px solid black;
+    border: 3px solid ${({ theme }) => theme.colors.black};
     max-width: 200px;
     width: 100%;
 `;
@@ -57,17 +57,17 @@ export const FormButton = styled.button`
     width: 100%;
     max-width: 70px;
     border: none;
-    background-color: hsl(180, 100%, 25%);
-    color: white;
+    background-color: ${({theme}) => theme.colors.teal};
+    color: ${({ theme }) => theme.colors.white};
     border-radius: 10px;
     transition: 0.5s;
     padding: 5px;
 
     &:hover {
-        background-color: hsl(180, 100%, 30%);
+        background-color: ${({theme}) => theme.colors.hoverTeal};
     }
 
     &:active {
-        background-color: hsl(180, 100%, 35%);
+        background-color: ${({theme}) => theme.colors.activeTeal};
     }
 `;
