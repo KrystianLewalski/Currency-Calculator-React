@@ -13,13 +13,13 @@ const formatDate = (date) =>
     });
 
 export const DateField = () => {
-    const date = useCurrentDate();
+    const Clock = useCurrentDate();
 
     return (
         <DateContainer>
             Data i godzina:
             {" "}
-            {formatDate(date)}
+            {formatDate(Clock)}
         </DateContainer>
     );
 };

@@ -1,6 +1,6 @@
 import { Result } from "./Result";
 import { useState } from "react";
-import { currencies } from "../currencies"
+import { useApi } from "../currencies"
 import { DateField } from "./Date";
 import {
     CalculatorForm, FieldSet, Legend, FormContainer,
@@ -8,8 +8,9 @@ import {
 } from "./styled"
 
 export const Form = ({ calculateResult, result }) => {
-    const [currency, setCurrency] = useState(currencies[0].short);
-    const [amount, setAmount] = useState("");
+    const { currencies } = useApi();
+    const [currency, setCurrency] = useState("PLN");
+    const [amount, setAmount] = useState(0);
 
     const onSubmit = (event) => {
         event.preventDefault();
@@ -48,17 +49,19 @@ export const Form = ({ calculateResult, result }) => {
                             Wybierz walutę**:
                         </LabelText>
                         <SelectField
+                            value={currency}
                             required
-                            onChange={({ target }) => setCurrency(target.value)}
+                            onChange={({ target }) =>
+                                setCurrency(target.value)}
                         >
-                            {currencies.map((currency => (
+                            {Object.keys(currencies.rates).map(currency => (
                                 <option
-                                    key={currency.short}
-                                    value={currency.short}
+                                    key={currency}
+                                    value={currency}
                                 >
-                                    {currency.name}
+                                    {currency}
                                 </option>
-                            )))}
+                            ))}
                         </SelectField>
                     </label>
                 </FormContainer>

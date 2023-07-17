@@ -1,17 +1,16 @@
 import { Form } from "./Form";
 import { useState } from "react";
-import { currencies } from "./currencies";
+import { useApi } from "./currencies";
 
 function App() {
   const [result, setResult] = useState();
+  const currencies = useApi();
 
   const calculateResult = (currency, amount) => {
-    const rate = currencies
-      .find(({ short }) => short === currency)
-      .rate;
+    const rate = currencies.rates[currency];
 
     setResult({
-      sourceAmount: +amount,
+      sourceAmount: amount,
       targetAmount: amount / rate,
       currency,
     });
