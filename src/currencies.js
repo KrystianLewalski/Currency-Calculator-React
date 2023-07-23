@@ -25,7 +25,7 @@ export const useApi = () => {
                 });
             }
         };
-        setTimeout(pullCurrencies, 3000);
+        setTimeout(pullCurrencies, 2000);
     }, []);
 
     return currencies;

@@ -4,18 +4,21 @@ import { useApi } from "../currencies"
 import { DateField } from "./Date";
 import {
     CalculatorForm, FieldSet, Legend, FormContainer,
-    LabelText, FormField, SelectField, FormButton
+    LabelText, FormField, SelectField, FormButton, Loading, 
+    Error
 } from "./styled"
 
 export const Form = ({ calculateResult, result }) => {
-    const { currencies } = useApi();
     const [currency, setCurrency] = useState("PLN");
     const [amount, setAmount] = useState(0);
+    const  currencies  = useApi();
 
     const onSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
     };
+
+    const currencyDate = currencies.date;
 
     return (
         <CalculatorForm onSubmit={onSubmit}>
@@ -24,6 +27,19 @@ export const Form = ({ calculateResult, result }) => {
                 <Legend>
                     Kalkulator Walut
                 </Legend>
+                {currencies.status === "wait" ? (
+                    <Loading>
+                    Proszę chwilę poczekać.<br /> 
+                    Dane kursów pobierają się
+                    z Europejskiego Banku Centralnego.<br />
+                    </Loading>
+                ) : currencies.status === "error" ? (
+                    <Error>
+                    Wystąpił błąd! Sprawdź połączenie z internetem. <br />
+                    Jeśli błąd dalej wystepuje spróbuj ponownie później.
+                    </Error>
+                ) : (
+                <>
                 <FormContainer>
                     <label>
                         <LabelText>
@@ -54,6 +70,7 @@ export const Form = ({ calculateResult, result }) => {
                             onChange={({ target }) =>
                                 setCurrency(target.value)}
                         >
+                            
                             {Object.keys(currencies.rates).map(currency => (
                                 <option
                                     key={currency}
@@ -69,7 +86,8 @@ export const Form = ({ calculateResult, result }) => {
                     Pola wymagane oznaczone *
                 </FormContainer>
                 <FormContainer>
-                    Kurs na dzień 21.05.2023**
+                    Kurs na dzień {currencyDate}**.
+                    Dane pobierane są z Europejskiego Banku Centralnego.
                 </FormContainer>
                 <FormContainer>
                     <FormButton>
@@ -77,6 +95,8 @@ export const Form = ({ calculateResult, result }) => {
                     </FormButton>
                 </FormContainer>
                 <Result result={result} />
+                </>
+                )}
             </FieldSet>
         </CalculatorForm>
     )

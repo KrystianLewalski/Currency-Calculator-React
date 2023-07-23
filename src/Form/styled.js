@@ -16,10 +16,10 @@ export const FieldSet = styled.fieldset`
 `;
 
 export const Legend = styled.legend`
-    border: 5px solid ${({theme}) => theme.colors.teal};
+    border: 5px solid ${({ theme }) => theme.colors.teal};
     border-radius: 20px;
     padding: 5px;
-    background-color: ${({theme}) => theme.colors.teal};
+    background-color: ${({ theme }) => theme.colors.teal};
     color: ${({ theme }) => theme.colors.white};
 `;
 
@@ -57,17 +57,27 @@ export const FormButton = styled.button`
     width: 100%;
     max-width: 70px;
     border: none;
-    background-color: ${({theme}) => theme.colors.teal};
+    background-color: ${({ theme }) => theme.colors.teal};
     color: ${({ theme }) => theme.colors.white};
     border-radius: 10px;
     transition: 0.5s;
     padding: 5px;
 
     &:hover {
-        background-color: ${({theme}) => theme.colors.hoverTeal};
+        background-color: ${({ theme }) => theme.colors.hoverTeal};
     }
 
     &:active {
-        background-color: ${({theme}) => theme.colors.activeTeal};
+        background-color: ${({ theme }) => theme.colors.activeTeal};
     }
+`;
+
+export const Loading = styled.div`
+    font-size: 16px;
+    text-align: center;
+`;
+
+export const Error = styled.div`
+    font-size: 16px;
+    text-align: center;
 `;
