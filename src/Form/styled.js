@@ -23,7 +23,7 @@ export const Legend = styled.legend`
     color: ${({ theme }) => theme.colors.white};
 `;
 
-export const FormContainer = styled.p`
+export const FormContainer = styled.div`
     display:flex;
     justify-content: center;
 `;
@@ -72,17 +72,17 @@ export const FormButton = styled.button`
     }
 `;
 
-export const Loading = styled.div`
+export const Loading = styled.p`
     font-size: 16px;
     text-align: center;
 `;
 
-export const Error = styled.div`
+export const Error = styled.p`
     font-size: 16px;
     text-align: center;
 `;
 
-export const Footer = styled.div`
+export const Footer = styled.p`
     font-size: 16px;
     text-align: center;
 `;
