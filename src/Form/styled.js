@@ -81,3 +81,8 @@ export const Error = styled.div`
     font-size: 16px;
     text-align: center;
 `;
+
+export const Footer = styled.div`
+    font-size: 16px;
+    text-align: center;
+`;
