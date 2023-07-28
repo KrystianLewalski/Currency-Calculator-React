@@ -9,7 +9,7 @@ import {
 } from "./styled"
 
 export const Form = ({ calculateResult, result }) => {
-    const [currency, setCurrency] = useState("PLN");
+    const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState(0);
     const currencies = useApi();
 
@@ -27,7 +27,7 @@ export const Form = ({ calculateResult, result }) => {
                 <Legend>
                     Kalkulator Walut
                 </Legend>
-                {currencies.status === "wait" ? (
+                {currencies.status === "loading" ? (
                     <Loading>
                         Proszę chwilę poczekać.<br />
                         Dane kursów pobierają się

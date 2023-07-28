@@ -5,15 +5,14 @@ const apiURL = "https://api.exchangerate.host/latest?base=PLN";
 
 export const useApi = () => {
     const [currencies, setCurrencies] = useState({
-        status: "wait",
+        status: "loading",
     });
 
     useEffect(() => {
-        const pullCurrencies = async () => {
+        const fetchCurrencies = async () => {
             try {
                 const response = await axios.get(apiURL);
-                const date = await response.data.date;
-                const rates = await response.data.rates;
+                const { rates, date } = response.data;
                 setCurrencies({
                     status: "succes",
                     date,
@@ -25,7 +24,7 @@ export const useApi = () => {
                 });
             }
         };
-        setTimeout(pullCurrencies, 2000);
+        setTimeout(fetchCurrencies, 2000);
     }, []);
 
     return currencies;
