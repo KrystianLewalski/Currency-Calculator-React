@@ -43,7 +43,7 @@ export const Form = ({ calculateResult, result }) => {
                         <FormContainer>
                             <label>
                                 <LabelText>
-                                    Kwota*:
+                                    Kwota w PLN*:
                                 </LabelText>
                                 <FormField
                                     value={amount}
